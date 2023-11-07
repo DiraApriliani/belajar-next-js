@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from './components/Navbar';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const about = ({data}) => {
   return (
@@ -12,11 +13,14 @@ const about = ({data}) => {
       <Navbar />
       <Image src="/next.svg" alt="Logo Next JS" width={100} height={100} />
       <h1>Ini Halaman about</h1>
-      {data.map((item) => (
-        <div key={item.id}>
-          <h2>{item.name}</h2>
-        </div>
-      ))}
+      {data.map((item) =>(
+            <div key={item.id}>
+                <Link href={`/about/${item.id}`}>
+                    <h2>{item.name}</h2>
+                </Link>
+            </div>
+        ))}
+      
     </>
   );
 };
@@ -30,6 +34,6 @@ export const getStaticProps = async () => {
   return{
     props:{
       data,
-  }
-  }
+  }
+  }
 };

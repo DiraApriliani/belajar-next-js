@@ -12,6 +12,6 @@ export default function Home() {
       <Navbar />
       <Image src="/next.svg" alt="Logo Next JS" width={100} height={100} />
       <h1>Ini Halaman Home</h1>
-    </>
-  );
+  </>
+  );
 }
